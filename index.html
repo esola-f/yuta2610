@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <!-- 1. 万が一JavaScriptがオフの環境用のバックアップ（指定の長いURLへ） -->
+  <meta http-equiv="refresh" content="0; url=https://hana-organic.esola-f.com/shop-item/makeup/uv-base/?utm_source=flyer&utm_medium=yutahana2610&utm_campaign=yutahana2610">
+  
+  <script>
+    // 2. 基本のリダイレクト先（パラメータ付きの長いURL）
+    const targetUrl = "https://hana-organic.esola-f.com/shop-item/makeup/uv-base/?utm_source=flyer&utm_medium=yutahana2610&utm_campaign=yutahana2610";
+    
+    // 3. もしメルマガ側でさらに末尾へパラメータを追加された場合も考慮して引き継ぐ
+    const currentParams = window.location.search;
+    if (currentParams) {
+      // 既に?が含まれている場合は&で結合
+      const separator = targetUrl.includes('?') ? '&' : '?';
+      window.location.href = targetUrl + separator + currentParams.substring(1);
+    } else {
+      window.location.href = targetUrl;
+    }
+  </script>
+</head>
+<body>
+  <p>ページを移動しています... 切り替わらない場合は <a href="https://hana-organic.esola-f.com/shop-item/makeup/uv-base/?utm_source=flyer&utm_medium=yutahana2610&utm_campaign=yutahana2610">こちら</a> をクリックしてください。</p>
+</body>
+</html>
